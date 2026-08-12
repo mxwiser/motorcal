@@ -1,1 +1,1 @@
-[WayBack WebSite](https::/qvqol.com/motorcal)
+[WayBack WebSite](https:/qvqol.com/motorcal)
