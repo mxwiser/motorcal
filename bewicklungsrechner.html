@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="bewicklungsrechner_xl_script.js"></script>
+	<link rel="stylesheet" href="bewicklungsrechner_xl_style.css" type="text/css">
+</head>
+
+<body>
+	<div id="jsContainer"><ul><li id="de" onclick="setlang(this.id);" style="color:#0000FF; font-weight:bold;">de</li><li id="en" onclick="setlang(this.id);">en</li></ul><form style="margin:auto;" name="Windungsrechner" action="javascript:return false;"><label for="Nuten" id="nuten_t">Nuten</label><input value="27" style="background-color: rgb(255, 255, 255);" size="3" maxlength="2" id="Nuten" name="Nuten" onchange="checkSPS(this.value,document.Windungsrechner.Pole.value,true);"><label for="Pole">Pole</label><input value="28" maxlength="3" size="3" id="Pole" name="Pole" onchange="checkSPS(document.Windungsrechner.Nuten.value,this.value,true); checkVerteilt();"><span id="schalti"><select id="schalt"><option value="-">D</option><option selected="selected" value="Y">Y</option></select></span><input onclick="berechnen(); return false;" id="Berechnen" value="Berechnen" type="submit"><span id="erweitert_einfach" style=" font-size:12px;" onclick="schema_eingeben();"> ⇐ erweitert</span></form><span id="info"></span><div style="border-bottom: 1px solid rgb(0, 0, 0);" id="Rasten">Diese Nut/Pol kombination rastet voraussichtlich <span style="font-weight:bold;">756</span> mal pro Umdrehung. <span style="font-size:10px; color:#999; font-style:italic;">KgV(27,28)</span><br>Und hat einen Wickelfaktor von: <span style="font-weight:bold;">0.95385</span> <span id="advanced" onclick="advanced();"> <span style="font-size:14px;">⇓</span> erweitert</span></div><div id="nutfacktor"></div><div id="steps"><span>Schritt für Schritt</span></div><div id="Ergebnis"><span id="s_1" style="color:#EA0000;">A</span><span id="s_2" style="color:#EA0000;">a</span><span id="s_3" style="color:#EA0000;">A</span><span id="s_4" style="color:#EA0000;">a</span><span id="s_5" style="color:#EA0000;">A</span><span id="s_6" style="color:#EA0000;">a</span><span id="s_7" style="color:#EA0000;">A</span><span id="s_8" style="color:#EA0000;">a</span><span id="s_9" style="color:#EA0000;">A</span><span id="s_10" style="color:#008AE6;">B</span><span id="s_11" style="color:#008AE6;">b</span><span id="s_12" style="color:#008AE6;">B</span><span id="s_13" style="color:#008AE6;">b</span><span id="s_14" style="color:#008AE6;">B</span><span id="s_15" style="color:#008AE6;">b</span><span id="s_16" style="color:#008AE6;">B</span><span id="s_17" style="color:#008AE6;">b</span><span id="s_18" style="color:#008AE6;">B</span><span id="s_19" style="color:#00CA00;">C</span><span id="s_20" style="color:#00CA00;">c</span><span id="s_21" style="color:#00CA00;">C</span><span id="s_22" style="color:#00CA00;">c</span><span id="s_23" style="color:#00CA00;">C</span><span id="s_24" style="color:#00CA00;">c</span><span id="s_25" style="color:#00CA00;">C</span><span id="s_26" style="color:#00CA00;">c</span><span id="s_27" style="color:#00CA00;">C</span></div><div id="canvas_container"><canvas width="700" height="700" id="statorCanvas"><p>Ihr Browser unterstützt kein HTML 5!<br>Grafische Darstellung nicht möglich.</p></canvas></div><div id="link_container"></div></div>
+	
+	<div id="hidden_links">
+	
+		<!-- hier k�nnen angegebene nut pol kombinationen mit einer anderen seite verlinkt werden. sie werden nur bei gleicher eingabe gezeigt -->
+		<!--
+		<a class="N_18_P_20" href ='http://www.google.de'>test</a> 
+		<a class="N_12_P_10" href ='http://www.google.de'>test2</a> 
+		-->
+	</div>
+
+
+</body></html>
