@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useCalculator } from '../composables/useCalculator'
+import { languages } from '../lib/i18n'
 import StatorCanvas from './StatorCanvas.vue'
 import WfTable from './WfTable.vue'
 import WindungsAnzeige from './WindungsAnzeige.vue'
@@ -53,8 +54,7 @@ const {
 <template>
   <div class="calculator">
     <ul class="lang-switch">
-      <li :class="{ active: lang === 'de' }" @click="setLang('de')">de</li>
-      <li :class="{ active: lang === 'en' }" @click="setLang('en')">en</li>
+      <li v-for="l in languages" :key="l" :class="{ active: lang === l }" @click="setLang(l)">{{ l }}</li>
     </ul>
 
     <form class="inputs" @submit.prevent="advancedMode ? computeFromSchema() : compute()">
