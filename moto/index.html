@@ -1,13 +1,54 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bewicklungsrechner XL</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>无刷电机绕组计算 - 绕组方案与绕组系数计算器</title>
+    <meta
+      name="description"
+      content="无刷电机绕组计算器：输入槽数与磁极数，自动生成三相绕组方案，计算绕组系数与齿槽转矩次数，支持星形/三角形接法、单层绕组、分布绕组、斜槽、缩短绕组等高级参数，含定子绕组可视化与动画。"
+    />
+    <meta
+      name="keywords"
+      content="无刷电机绕组计算,无刷电机绕组方案,绕组系数计算,BLDC绕组计算,无刷电机槽极配合,齿槽转矩计算,三相绕组,星形接法,三角形接法,定子绕组,电机绕组在线计算,Winding calculator"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Bewicklungsrechner XL" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="无刷电机绕组计算 - 绕组方案与绕组系数计算器" />
+    <meta
+      property="og:description"
+      content="免费在线无刷电机绕组计算工具：槽极配合分析、绕组方案生成、绕组系数与齿槽转矩计算，支持多种接法与高级参数，含定子绕组可视化。"
+    />
+    <meta property="og:site_name" content="无刷电机绕组计算" />
+    <meta property="og:locale" content="zh_CN" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "无刷电机绕组计算器",
+        "alternateName": "Bewicklungsrechner XL",
+        "description": "无刷电机绕组计算与绕组方案生成工具，可计算绕组系数、齿槽转矩次数，并可视化定子绕组。",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "inLanguage": ["zh-CN", "de", "en"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "CNY"
+        },
+        "keywords": "无刷电机绕组计算,绕组方案,绕组系数,BLDC,齿槽转矩"
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>
+    <noscript>
+      <h1>无刷电机绕组计算器</h1>
+      <p>输入槽数与磁极数，生成三相无刷电机绕组方案，计算绕组系数与齿槽转矩次数。</p>
+    </noscript>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
