@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import WindingCalculator from './components/WindingCalculator.vue'
 </script>
 
 <template>
-  <HelloWorld />
+  <WindingCalculator />
 </template>
