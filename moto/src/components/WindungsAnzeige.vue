@@ -84,6 +84,7 @@ function showAnimation() {
     tmp.push(wfFftSchnell(props.schema, vals, props.pole, tg / 100, maxnutb))
   }
   samples.value = tmp
+  stopAnimation()
   running = true
   tick(0)
 }
@@ -122,13 +123,13 @@ onUnmounted(stopAnimation)
     <div v-if="samples.length" class="chart">
       <div
         class="grid"
-        :style="{ gridTemplateColumns: 'repeat(34, 15px)', gridTemplateRows: 'repeat(17, 11px) 238px' }"
+        :style="{ gridTemplateColumns: 'repeat(34, 15px)', gridTemplateRows: '11px 238px' }"
       >
         <div
           v-for="i in 17"
           :key="'l' + i"
           class="tlabel"
-          :style="{ gridColumn: (i - 1) * 2 + 1 + ' / span 2', gridRow: String(18 - i) }"
+          :style="{ gridColumn: (i - 1) * 2 + 1 + ' / span 2', gridRow: '1' }"
         >
           {{ labels[i - 1] }}
         </div>
@@ -136,7 +137,7 @@ onUnmounted(stopAnimation)
           v-for="i in 34"
           :key="'b' + i"
           class="bar"
-          :style="{ height: heights[i - 1] + 'px', gridColumn: String(i), gridRow: '18' }"
+          :style="{ height: heights[i - 1] + 'px', gridColumn: String(i), gridRow: '2' }"
         ></div>
       </div>
       <div class="stats">
@@ -216,14 +217,17 @@ onUnmounted(stopAnimation)
 
 .tlabel {
   font-size: 9px;
+  font-family: monospace;
   text-align: center;
   line-height: 11px;
-  align-self: end;
+  overflow: visible;
 }
 
 .bar {
   background-color: #339966;
   align-self: end;
+  justify-self: center;
+  width: 13px;
 }
 
 .stats {
