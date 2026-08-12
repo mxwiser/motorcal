@@ -115,41 +115,6 @@ const {
       </div>
     </div>
 
-    <div v-if="displayChars.length" class="result">
-      <span v-if="error" class="unbalanced">{{ error }}</span>
-      <template v-if="error">( </template>
-      <span
-        v-for="(ch, i) in displayChars"
-        :key="i"
-        class="result-char"
-        :class="{ active: ch.active }"
-        :style="{ color: ch.color }"
-        >{{ ch.ch }}</span
-      >
-      <template v-if="error"> )</template>
-    </div>
-
-    <div v-if="showSteps" class="steps">
-      <span v-if="!stepMode" class="step-label" @click="startSteps()">{{ t('schritt_schritt') }}</span>
-      <template v-else>
-        <span class="step-nav" @click="stepBack()">&lt;- {{ t('schritt_zurueck') }}</span>
-        <span class="sep">·</span>
-        <span class="step-nav" @click="stepNext()">{{ t('schritt_vor') }} -&gt;</span>
-      </template>
-    </div>
-
-    <StatorCanvas
-      v-if="nutenx > 0"
-      :nuten="nutenx"
-      :schema="schemay"
-      :schritt="stepMode ? actSchritt : null"
-      :schaltung="schaltx"
-      :polex="polex"
-      :verteilt="verteilt"
-      :verkuerzung="Number(verkuerzung) || 0"
-      :has-error="fehlerV"
-    />
-
     <div v-if="showAdvanced && nutenx > 0" class="advanced">
       <div class="adv-title">{{ t('WF_tabelle') }}</div>
       <div class="adv-row">
@@ -192,6 +157,41 @@ const {
       <WindungsAnzeige v-if="!verteilt" :schema="schemax" :pole="polex" />
       <WfTable v-if="wfTableData.length" :wf="wfTableData" :nuten="nutenx" />
     </div>
+
+    <div v-if="displayChars.length" class="result">
+      <span v-if="error" class="unbalanced">{{ error }}</span>
+      <template v-if="error">( </template>
+      <span
+        v-for="(ch, i) in displayChars"
+        :key="i"
+        class="result-char"
+        :class="{ active: ch.active }"
+        :style="{ color: ch.color }"
+        >{{ ch.ch }}</span
+      >
+      <template v-if="error"> )</template>
+    </div>
+
+    <div v-if="showSteps" class="steps">
+      <span v-if="!stepMode" class="step-label" @click="startSteps()">{{ t('schritt_schritt') }}</span>
+      <template v-else>
+        <span class="step-nav" @click="stepBack()">&lt;- {{ t('schritt_zurueck') }}</span>
+        <span class="sep">·</span>
+        <span class="step-nav" @click="stepNext()">{{ t('schritt_vor') }} -&gt;</span>
+      </template>
+    </div>
+
+    <StatorCanvas
+      v-if="nutenx > 0"
+      :nuten="nutenx"
+      :schema="schemay"
+      :schritt="stepMode ? actSchritt : null"
+      :schaltung="schaltx"
+      :polex="polex"
+      :verteilt="verteilt"
+      :verkuerzung="Number(verkuerzung) || 0"
+      :has-error="fehlerV"
+    />
   </div>
 </template>
 
